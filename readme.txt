@@ -3,6 +3,12 @@ There are a NUMBER of things that are out of place here, but I figured at this s
 
 I've never read a readme.txt so before I do that... here's what I've got so far. 
 
+PREREQUISITES
+- a python 3 environment
+- I'm using Python3.8
+- both files (timer.py and timer.csv) in same folder
+
+DESCRIPTION
 timer.py keeps track of my independent coding practice. 
 As I run it (in terminal), it registers the starting time and asks what I'm working on.
 If my project doesn't exist, it creates it. 
