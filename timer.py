@@ -2,7 +2,6 @@
 import csv
 import time
 
-'''
 def stopWatch(value):
     valueD = (((value/365)/24)/60)
     days = int(valueD)
@@ -17,7 +16,6 @@ def stopWatch(value):
     seconds = int(valueS)
 
     return days, hours, minutes, seconds
-'''
 '''
 def parser(n):
     totalInSeconds = math.floor(n)
