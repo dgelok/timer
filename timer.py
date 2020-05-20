@@ -1,21 +1,29 @@
 # keeps track of my hours in coding
 import csv
 import time
+import math
 
 def stopWatch(value):
-    valueD = (((value/365)/24)/60)
-    days = int(valueD)
+    nDays = 0
+    nHours = 0
+    nMinutes = 0
+    nSeconds = 0
 
-    valueH = (valueD - days) * 365
-    hours = int(valueH)
+    if value > 86400: #days
+        nDays = math.floor(value/86400)
+        value = value % 86400 
 
-    valueM = (valueH - hours) * 24
-    minutes = int(valueM)
+    if value > 3600: #hours
+        nHours = math.floor(value/3600)
+        value = value % 3600
 
-    valueS = (valueM - minutes) * 60
-    seconds = int(valueS)
+    if value > 60: #minutes 
+        nMinutes = math.floor(value/60)
+        value = value % 60
+    
+    nSeconds = math.floor(value)
 
-    return days, hours, minutes, seconds
+    return nDays, nHours, nMinutes, nSeconds
 '''
 def parser(n):
     totalInSeconds = math.floor(n)
