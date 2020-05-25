@@ -1,6 +1,6 @@
 # Timer
 
-Hello, GitHubbers! 👋 This is my first real project!
+Hello, GitHubbers! 👋 This is my first real (*self-conceived, independently-developed*) project! 
 
 ### Description
 
@@ -19,3 +19,12 @@ Hello, GitHubbers! 👋 This is my first real project!
 ### Changelog
 
 - Version 1 had some issues; it exported to the csv properly but had inaccuracies recording the time.
+- Version 1.1 fixed recording issues, updated README to a .md.
+
+### Next up
+
+- change csv so it becomes human-readable
+- add feature to list currently recorded projects and their totals
+- add feature to list current day's cumulative time
+- rewrite whole thing in JS!
+- wire up to a website
