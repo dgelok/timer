@@ -24,25 +24,12 @@ def stopWatch(value):
     nSeconds = math.floor(value)
 
     return nDays, nHours, nMinutes, nSeconds
-'''
-def parser(n):
-    totalInSeconds = math.floor(n)
-    secondsLeftOver = totalInSeconds % 60
-    minutes = math.floor(totalInSeconds/60)
-    hours = math.floor(totalInSeconds / 3600)
-    minutesLeftOver = minutes - (hours * 60)
 
-    print(f"\nYou have been working for a total of {totalInSeconds} seconds.")
-    print(f"\nThat's {minutes} minutes and {secondsLeftOver} seconds.")
-    print(f"\nThat's {hours} hours, {minutesLeftOver} minutes, and {secondsLeftOver} seconds.")
-
-    return hours, minutesLeftOver, secondsLeftOver
-'''
 
 start = time.time()
 
 
-print("Welcome, Mr. Gelok. Which project are you working on today?")
+print("\nWelcome, Mr. Gelok. Which project are you working on today?")
 todaysProject = input("> ")
 print("\n"*8)
 print("Please hit Enter when finished.")
@@ -53,7 +40,9 @@ readerTime = end - start
 timeToday = stopWatch(readerTime)
 totalTime = 0
 
+# Opening the file
 r = csv.reader(open('timer.csv'))
+# splitting into a list
 lines = list(r)
 
 testlist = []
@@ -67,6 +56,10 @@ for line in lines:
     if line[0] == todaysProject:
         sofar = float(line[1])
         line[1] = sofar + readerTime
+#        line[2] = timeToday[0]
+#        line[3] = timeToday[1]
+#        line[4] = timeToday[2]
+#        line[5] = timeToday[3]
     
     if line[0] == 'total':
         sofar = float(line[1])
