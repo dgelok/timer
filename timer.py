@@ -47,25 +47,24 @@ lines = list(r)
 
 testlist = []
 for line in lines:
-    testlist.append(line[0])
+    if len(line) > 0:
+        testlist.append(line[0][0])
 if todaysProject not in testlist:
     newline = [todaysProject,0]
     lines.append(newline)
 
+
 for line in lines:
-    if line[0] == todaysProject:
-        sofar = float(line[1])
-        line[1] = sofar + readerTime
-#        line[2] = timeToday[0]
-#        line[3] = timeToday[1]
-#        line[4] = timeToday[2]
-#        line[5] = timeToday[3]
-    
-    if line[0] == 'total':
-        sofar = float(line[1])
-        cumulativeTime = sofar + readerTime
-        totalTime = cumulativeTime
-        line[1] = cumulativeTime
+    if len(line) > 0:
+        if line[0] == todaysProject:
+            sofar = float(line[1])
+            line[1] = sofar + readerTime
+        
+        if line[0] == 'total':
+            sofar = float(line[1])
+            line[1] = sofar + readerTime
+            totalTime = line[1]
+
 
 writer = csv.writer(open('timer.csv', 'w'))
 writer.writerows(lines)
