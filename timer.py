@@ -66,7 +66,7 @@ for line in lines:
             totalTime = line[1]
 
 
-writer = csv.writer(open('timer.csv', 'w'))
+writer = csv.writer(open('timer.csv', 'w', newline=""))
 writer.writerows(lines)
 
 grandTotal = stopWatch(totalTime)
