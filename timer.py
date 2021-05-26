@@ -48,7 +48,7 @@ lines = list(r)
 testlist = []
 for line in lines:
     if len(line) > 0:
-        testlist.append(line[0][0])
+        testlist.append(line[0])
 if todaysProject not in testlist:
     newline = [todaysProject,0]
     lines.append(newline)
